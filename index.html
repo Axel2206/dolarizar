@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Milei Presidente: ¿Tu Sueldo se Convertirá en Dólares? Descúbrelo Aquí</title>
+    <meta name="description"
+        content="Descubre cómo Milei como presidente podría impactar tus ingresos. Calcula tu sueldo en dólares aquí.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <style>
+        body {
+            background-color: rgb(0, 0, 0);
+            /* Color de fondo semitransparente */
+            background-blend-mode: multiply;
+            /* Mezcla de la imagen y el color de fondo */
+            background-position: center center;
+            /* Centrar la imagen de fondo */
+            background-size: cover;
+            /* Ajustar el tamaño de la imagen de fondo */
+            color: rgb(255, 255, 255);
+        }
+
+        .card {
+            background-color: rgba(0, 0, 0, 0.5);
+            /* Color de fondo semitransparente para el titular */
+            border: none;
+            backdrop-filter: blur(5px);
+        }
+
+        .violeta {
+            background-color: #480b571f;
+            border-color: #ffe600;
+        }
+
+        .btn-primary {
+            background-color: #000000;
+            border-color: #ffe600;
+            color: #ffffff;
+        }
+
+        .btn-primary:hover {
+            background-color: #000000;
+            border-color: #ffe600;
+            color: #ffffff;
+        }
+
+        footer {
+            background-color: rgba(0, 0, 0, 0.5);
+            /* Color de fondo semitransparente para el titular */
+            backdrop-filter: blur(5px);
+            position: relative;
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-direction: column;
+            flex-direction: column;
+            min-width: 0;
+            word-wrap: break-word;
+            background-clip: border-box;
+            border: 1px solid rgba(0, 0, 0, .125);
+            border-radius: .25rem;
+            padding: .75rem 1.25rem;
+        }
+
+        /* Estilos para centrar el logo */
+        .logo-container {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="imagen" style="position:absolute;">
+        <img src="img/banner.png" alt="leon" width=60%;>
+    </div>
+    <div class="imagen"
+        style="position:absolute; mix-blend-mode: exclusion; text-align: center; margin-top: -12.9%;margin-right: -15%;margin-left: -15%; background-image: linear-gradient">
+        <img src="img/texture.png" alt="leon" width=80%;>
+    </div>
+    <div class="container mt-5">
+
+
+
+        <div class="row justify-content-center">
+
+
+
+            <div class="col-lg-6 col-md-8" style="position: absolute;">
+                <div style="margin-top:-5%; text-align: center; margin-bottom: 10%;">
+                    <img src="img/logo.png" alt="LLA" width=50%;>
+                </div>
+                <div class="card">
+                    <div class="card-header violeta text-white text-center">
+                        <h4 class="mb-0">¡Descubre cuánto ganaría en dólares si Milei es presidente!<br>
+                        </h4>
+                    </div>
+                    <div class="card-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="sueldoPesos">Ingresa tu sueldo en pesos:</label>
+                                <input type="number" class="form-control" id="sueldoPesos">
+                            </div>
+                            <button type="button" class="btn btn-primary btn-block" id="calcular">Dolarizar!</button>
+                        </form>
+                        <div class="mt-3" style="text-align: center;" id="resultado"></div>
+
+                    </div>
+
+                </div>
+
+
+
+                <footer style="margin-top: 5%;">
+                    <p>La cotización de $9880 = 1 dólar corresponde a la tasa de cambio mencionada en <a
+                            href="https://www.cronista.com/finanzas-mercados/que-pasa-con-el-dolar-si-gana-javier-milei-las-elecciones-generales/#:~:text=El%20tipo%20de%20cambio%20para,dicho%20informe%20de%20abril%202023."
+                            target="_blank">El Cronista</a>, actualizado el 14 de Agosto de 2023 a las 10:31.</p>
+                </footer>
+            </div>
+
+        </div>
+    </div>
+
+
+
+    <!-- Scripts de Bootstrap y cálculo -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        document.getElementById('calcular').addEventListener('click', function () {
+            const sueldoPesos = parseFloat(document.getElementById('sueldoPesos').value);
+            const tasaCambio = 9880; // Tasa de cambio del 14 de Agosto de 2023
+            const sueldoDolares = sueldoPesos / tasaCambio;
+            document.getElementById('resultado').innerHTML = `<p class="mt-3">Sueldo en Dólares: $${sueldoDolares.toFixed(2)}</p>`;
+        });
+    </script>
+</body>
+
+</html>
